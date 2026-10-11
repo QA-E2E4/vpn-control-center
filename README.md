@@ -8,6 +8,22 @@ Windows, macOS и Linux.
 > localhost/SSH-туннель. Не публикуйте её в интернет без отдельной проверки
 > аутентификации, TLS и модели доступа.
 
+## Скачать для Windows
+
+В проекте есть два разных Windows-приложения — выберите нужное:
+
+| Приложение | Для чего нужно | Скачать |
+|---|---|---|
+| **OpenFlux Panel Launcher 0.3.0** | Открывает административную веб-панель через SSH-туннель. Это не VPN-клиент. | [ZIP-архив лаунчера](https://github.com/QA-E2E4/vpn-control-center/raw/refs/heads/main/downloads/OpenFluxPanelLauncher-0.3.0-Windows-x64.zip) · [исходники и инструкция](panel-launcher/) |
+| **OpenFluxDesktop 2.4.1** | Подключает Windows к VPN-профилю и запускает локальное ядро OpenFlux. | [Portable ZIP — без установки](https://github.com/p1neappleXpress/OpenFluxDesktop/releases/download/v2.4.1/OpenFlux-2.4.1-windows-x64-portable.zip) · [все варианты и контрольные суммы](https://github.com/p1neappleXpress/OpenFluxDesktop/releases/tag/v2.4.1) |
+
+Лаунчер нужен администратору для защищённого доступа к панели; VPN-клиент
+нужен пользователю для подключения по выданному VPN-профилю. Они не заменяют
+друг друга. Portable-архив Desktop-клиента и его контрольные суммы выпускает
+официальный проект OpenFluxDesktop; проверяйте опубликованный SHA-256 перед
+запуском. SHA-256 архива лаунчера: `4e4787ac313bffb17a4cb1910a432a502e6ddb9a41742ca9b12fdb8b0a8a8ba5`.
+Сборка лаунчера в этом репозитории не подписана Authenticode.
+
 ## Возможности
 
 - Разделы OpenFlux, Happ и AmneziaWG с управлением доступом и профилями.

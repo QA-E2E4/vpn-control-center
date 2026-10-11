@@ -5,6 +5,11 @@
 Лаунчер создаёт SSH port-forward к loopback панели и открывает её в браузере.
 Он не является VPN-клиентом и не запускает VPN-ядро.
 
+**Скачать:** [OpenFlux Panel Launcher 0.3.0 для Windows x64 (ZIP)](https://github.com/QA-E2E4/vpn-control-center/raw/refs/heads/main/downloads/OpenFluxPanelLauncher-0.3.0-Windows-x64.zip).
+Внутри — лаунчер и документация. Настройки сервера и путь к вашему ключу
+задаются локально при первом запуске; архив не содержит пользовательских
+настроек или приватных ключей. Исполняемый файл не подписан Authenticode.
+
 ## Возможности
 
 - Настраиваемые SSH host, port, user и путь к локальному приватному ключу.
