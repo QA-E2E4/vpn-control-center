@@ -1,0 +1,17 @@
+name: Предложить улучшение
+description: Запрос функции или изменение интерфейса
+title: "feature: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Какую задачу нужно решить?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Предлагаемое решение
+    validations:
+      required: true

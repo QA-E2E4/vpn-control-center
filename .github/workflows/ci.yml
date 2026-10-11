@@ -1,0 +1,44 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  panel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: python -m pip install -r panel/requirements.txt
+      - run: python -m unittest discover -s panel/tests -p "test_*.py" -v
+      - run: node panel/tests/frontend.test.js
+      - run: node --check panel/static/app.js
+
+  windows-desktop:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - run: .\gradlew.bat :shared:jvmTest
+        working-directory: windows-client
+      - run: .\gradlew.bat -PwindowsPackage=true :desktopApp:packageMsi
+        working-directory: windows-client

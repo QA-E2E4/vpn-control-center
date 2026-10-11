@@ -1,0 +1,24 @@
+name: Сообщить об ошибке
+description: Обезличенное описание дефекта
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Что произошло?
+      description: Не прикладывайте VPN-ссылки, ключи, cookies, реальные IP или необработанные логи.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Как воспроизвести на тестовых данных?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия и ОС
+    validations:
+      required: true
