@@ -3,6 +3,12 @@
 ## Компоненты
 
 ```text
+Windows-лаунчер ── OpenSSH local forward ── браузер администратора
+                                                │ localhost HTTP + page token
+                                                ▼
+                                          Python panel/server.py
+
+Либо ручной SSH-туннель:
 Браузер (локально через SSH)
        │ localhost HTTP + краткоживущий page token
        ▼
@@ -11,13 +17,14 @@ Python panel/server.py ── SQLite + локальная статика
        ├── Docker/Xray API and scoped credential updates
        └── Docker/AmneziaWG peer operations
 
-Windows Desktop ── локальный OpenFlux core process ── selected transport ── exit
+OpenFlux Desktop ── локальный OpenFlux core process ── selected transport ── exit
 ```
 
-Desktop-клиент и панель независимы: desktop не соединяется с admin API панели.
-Ключи профилей генерируются/выдаются серверной панелью и импортируются в
-совместимый VPN-клиент. Desktop хранит только пользовательские профили и
-запускает ядро OpenFlux как дочерний процесс.
+Лаунчер панели и VPN-клиент — разные приложения. Лаунчер устанавливает SSH
+port-forward к loopback веб-панели и открывает её в браузере; он не запускает
+VPN-ядро и не меняет VPN-профили. OpenFlux Desktop не соединяется с admin API
+панели: ключи VPN выдаются панелью и импортируются в совместимый клиент.
+Desktop хранит профили локально и запускает ядро OpenFlux как дочерний процесс.
 
 ## Backend панели
 
