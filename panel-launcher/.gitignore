@@ -1,0 +1,7 @@
+OpenFlux.exe
+OpenFlux.Validation.exe
+*.pdb
+*.user
+bin/
+obj/
+preview.png

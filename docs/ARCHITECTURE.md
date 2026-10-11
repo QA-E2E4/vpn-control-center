@@ -20,9 +20,10 @@ Python panel/server.py ── SQLite + локальная статика
 OpenFlux Desktop ── локальный OpenFlux core process ── selected transport ── exit
 ```
 
-Лаунчер панели и VPN-клиент — разные приложения. Лаунчер устанавливает SSH
-port-forward к loopback веб-панели и открывает её в браузере; он не запускает
-VPN-ядро и не меняет VPN-профили. OpenFlux Desktop не соединяется с admin API
+Лаунчер панели и VPN-клиент — разные приложения. Исходники лаунчера находятся
+в `panel-launcher/`. Он устанавливает SSH port-forward к loopback веб-панели
+и открывает её в браузере; не запускает VPN-ядро и не меняет VPN-профили.
+OpenFlux Desktop не соединяется с admin API
 панели: ключи VPN выдаются панелью и импортируются в совместимый клиент.
 Desktop хранит профили локально и запускает ядро OpenFlux как дочерний процесс.
 
