@@ -15,6 +15,11 @@ UI, профили, импорт ссылок, подключение/отклю
 
 ## Запуск и тесты
 
+При клонировании корневого репозитория используйте
+`git clone --recurse-submodules`; если он уже клонирован, выполните
+`git submodule update --init --recursive` из корня. Это загружает официальный
+OpenFluxDesktop и его shared/core submodules.
+
 Из `windows-client/`:
 
 ```powershell

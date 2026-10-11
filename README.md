@@ -79,6 +79,15 @@ ssh -N -L 8787:127.0.0.1:8787 admin@your-vps.example.net
 
 ## Windows Desktop
 
+Клонируйте проект вместе с upstream submodules:
+
+```powershell
+git clone --recurse-submodules https://github.com/QA-E2E4/vpn-control-center.git
+```
+
+Если репозиторий уже клонирован без них, выполните
+`git submodule update --init --recursive` из его корня.
+
 ```powershell
 cd windows-client
 .\gradlew.bat :shared:jvmTest
